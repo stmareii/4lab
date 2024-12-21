@@ -46,6 +46,11 @@ def get_track(song, artist):
     else:
         return("Прости! Не удалось найти информацию... Может ты что-то неправильно ввел? <(_ _)>")
 
+@bot.message_handler(commands=['ur_favourite_song'])
+def cat_fav_song(message):
+     bot.reply_to(message, ('Ой, я так рад, что ты спросил про мою любимую песню! Вот она:'
+                            '[ur_favourite_song](https://www.last.fm/music/lvusm/_/meow)'), parse_mode='Markdown')
+
 
 @bot.message_handler(commands=['site', 'last.fm'])
 def site(message):
@@ -63,9 +68,6 @@ def handle(message):
         bot.reply_to(message, ('Ты не так отправил запрос! Обязателен формат:\n'
                                '"Название песни - исполнитель",\n я по-другому не умею...	(っ˘̩╭╮˘̩)っ'))
 
-
-#@bot.message_handler(commands=['ur_favourite_song'])
-#def cat_fav_song(message):
 
 
 
